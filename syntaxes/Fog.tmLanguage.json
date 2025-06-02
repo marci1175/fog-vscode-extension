@@ -3,18 +3,44 @@
 	"name": "Fog Programming Language",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include": "#comments"
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#types"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#functions"
+		},
+		{
+			"include": "#variables"
+		},
+		{
+			"include": "#literals"
+		},
+		{
+			"include": "#numeric_literals"
+		},
+		{
+			"include": "#math_operators"
 		}
 	],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.Fog",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+		"comments": {
+			"name": "comment.line.Fog",
+			"begin": "#",
+			"end": "\n",
+			"patterns": [
+				{
+					"name": "constant.character.escape.Fog",
+					"match": "\\\\."
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.Fog",
@@ -26,6 +52,28 @@
 					"match": "\\\\."
 				}
 			]
+		},
+		"types": {
+			"patterns": [{
+				"name": "support.type",
+				"match": "\\b(int|float|uint|inthalf|floathalf|uinthalf|intlong|floatlong|uintlong|uintsmall|string|void|bool)\\b"
+			}]
+		},
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.Fog",
+				"match": "\\b(import|if|while|for|return)\\b"
+			}]
+		},
+		"functions": {
+			"patterns": [{
+				"name": "support.function",
+				"match": "\\b(\\w+)\\s*(?=\\()"
+			}]
+		},
+		"numeric_literals": {
+			"name": "constant.numeric.fog",
+			"match": "\\b\\d+(\\.\\d+)?\\b"
 		}
 	},
 	"scopeName": "source.f"
