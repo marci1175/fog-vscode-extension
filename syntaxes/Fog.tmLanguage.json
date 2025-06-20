@@ -6,6 +6,9 @@
 			"include": "#comments"
 		},
 		{
+			"include": "#fmt_variables"
+		},
+		{
 			"include": "#strings"
 		},
 		{
@@ -42,11 +45,18 @@
 				}
 			]
 		},
+		"fmt_variables": {
+			"name": "keyword.other",
+			"match": "%[a-zA-Z_][a-zA-Z0-9_]*"
+		},
 		"strings": {
-			"name": "string.quoted.double.Fog",
+			"name": "string.quoted.double.fog",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [
+				{
+					"include": "#fmt_variables"
+				},
 				{
 					"name": "constant.character.escape.Fog",
 					"match": "\\\\."
@@ -62,7 +72,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.Fog",
-				"match": "\\b(import|if|while|for|return)\\b"
+				"match": "\\b(import|if|while|for|return|loop|break|continue)\\b"
 			}]
 		},
 		"functions": {
