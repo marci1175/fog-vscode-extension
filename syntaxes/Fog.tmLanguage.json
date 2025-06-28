@@ -18,7 +18,7 @@
 			"include": "#keywords"
 		},
 		{
-			"include": "#functions"
+			"include": "#function_names"
 		},
 		{
 			"include": "#variables"
@@ -31,6 +31,9 @@
 		},
 		{
 			"include": "#math_operators"
+		},
+		{
+			"include": "declarations"
 		}
 	],
 	"repository": {
@@ -47,7 +50,7 @@
 		},
 		"fmt_variables": {
 			"name": "keyword.other",
-			"match": "%[a-zA-Z_][a-zA-Z0-9_]*"
+			"match": "%(?:[a-zA-Z_][a-zA-Z0-9_]*|)"
 		},
 		"strings": {
 			"name": "string.quoted.double.fog",
@@ -75,7 +78,7 @@
 				"match": "\\b(import|if|while|for|return|loop|break|continue)\\b"
 			}]
 		},
-		"functions": {
+		"function_names": {
 			"patterns": [{
 				"name": "support.function",
 				"match": "\\b(\\w+)\\s*(?=\\()"
@@ -84,6 +87,10 @@
 		"numeric_literals": {
 			"name": "constant.numeric.fog",
 			"match": "\\b\\d+(\\.\\d+)?\\b"
+		},
+		"declarations": {
+			"name": "keyword.other",
+			"match": "\\b(struct|function|impl|trait|enum|pub|priv)\\b"
 		}
 	},
 	"scopeName": "source.f"
