@@ -33,7 +33,7 @@
 			"include": "#math_operators"
 		},
 		{
-			"include": "declarations"
+			"include": "#declarations"
 		}
 	],
 	"repository": {
@@ -89,8 +89,10 @@
 			"match": "\\b\\d+(\\.\\d+)?\\b"
 		},
 		"declarations": {
+			"patterns": [{
 			"name": "keyword.other",
 			"match": "\\b(struct|function|impl|trait|enum|pub|priv)\\b"
+			}]
 		}
 	},
 	"scopeName": "source.f"
