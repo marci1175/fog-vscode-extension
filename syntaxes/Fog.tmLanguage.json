@@ -75,7 +75,7 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.Fog",
-				"match": "\\b(import|if|while|for|return|loop|break|continue)\\b"
+				"match": "\\b(import|if|else|elseif|while|for|return|loop|break|continue)\\b"
 			}]
 		},
 		"function_names": {
